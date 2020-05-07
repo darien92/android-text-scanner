@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/master_view"
+    tools:context=".views.ScanActivity">
+
+    <TextureView
+        android:id="@+id/camera_surface_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="20dp">
+
+        <Button
+            android:id="@+id/flash_status_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/transparent"
+            app:layout_constraintBottom_toBottomOf="@+id/flash_status_image"
+            app:layout_constraintEnd_toEndOf="@+id/flash_status_image"
+            app:layout_constraintStart_toStartOf="@+id/flash_status_image"
+            app:layout_constraintTop_toTopOf="@+id/flash_status_image" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/clear_black"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/scan_area"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/clear_black"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/scan_area"
+            app:layout_constraintEnd_toStartOf="@+id/scan_area"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/clear_black"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scan_area" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/clear_black"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/scan_area"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/scan_area"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/scan_area"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/transparent"
+            android:elevation="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/rounded_button_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.513"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:rotation="45"
+                android:src="@drawable/ic_navigate_next_red_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:rotation="135"
+                android:src="@drawable/ic_navigate_next_red_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:rotation="315"
+                android:src="@drawable/ic_navigate_next_red_24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:rotation="220"
+                android:src="@drawable/ic_navigate_next_red_24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/rounded_button_border"
+            android:visibility="invisible"
+            android:layout_width="@dimen/photo_btn_border_circle"
+            android:layout_height="@dimen/photo_btn_border_circle"
+            android:background="@drawable/rounded_button_border"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_scan"
+            app:layout_constraintEnd_toEndOf="@+id/btn_scan"
+            app:layout_constraintStart_toStartOf="@+id/btn_scan"
+            app:layout_constraintTop_toTopOf="@+id/btn_scan" />
+        <Button
+            android:id="@+id/btn_scan"
+            android:visibility="invisible"
+            android:layout_width="@dimen/photo_btn_radius"
+            android:layout_height="@dimen/photo_btn_radius"
+            android:layout_marginBottom="64dp"
+            android:text=""
+            android:background="@drawable/rounded_photo_btn"
+            android:clickable="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/scan_progress_bar"
+            android:layout_width="@dimen/photo_btn_border_circle"
+            android:layout_height="@dimen/photo_btn_border_circle"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_scan"
+            app:layout_constraintEnd_toEndOf="@+id/btn_scan"
+            app:layout_constraintStart_toStartOf="@+id/btn_scan"
+            app:layout_constraintTop_toTopOf="@+id/btn_scan"
+            android:indeterminateTint="#ffffff"/>
+
+        <ImageView
+            android:id="@+id/imag_call_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_folder_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_saved_texts"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/transparent"
+            app:layout_constraintBottom_toBottomOf="@+id/imag_call_history"
+            app:layout_constraintEnd_toEndOf="@+id/imag_call_history"
+            app:layout_constraintStart_toStartOf="@+id/imag_call_history"
+            app:layout_constraintTop_toTopOf="@+id/imag_call_history" />
+
+        <ImageView
+            android:id="@+id/flash_status_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_flash_auto_black_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

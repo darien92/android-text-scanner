@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <TextView
+        android:id="@+id/tv_text_results"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="center_vertical"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="12345678901234"
+        app:layout_constraintEnd_toStartOf="@+id/img_delete_number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/delete_text_btn" />
+
+    <ImageView
+        android:id="@+id/img_delete_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_delete_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/delete_text_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/img_delete_number"
+        app:layout_constraintEnd_toEndOf="@+id/img_delete_number"
+        app:layout_constraintStart_toStartOf="@+id/img_delete_number"
+        app:layout_constraintTop_toTopOf="@+id/img_delete_number" />
+
+    <TextView
+        android:id="@+id/tv_timestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="10sp"
+        android:text="04/05/2020 "
+        app:layout_constraintStart_toStartOf="@+id/tv_text_results"
+        app:layout_constraintBottom_toBottomOf="@+id/delete_text_btn" />
+
+    <Button
+        android:id="@+id/btn_read"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_text_results"
+        app:layout_constraintStart_toStartOf="@+id/tv_text_results"
+        app:layout_constraintTop_toTopOf="@+id/tv_text_results" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
