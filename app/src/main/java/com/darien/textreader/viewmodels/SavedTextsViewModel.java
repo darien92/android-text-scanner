@@ -25,27 +25,15 @@ public class SavedTextsViewModel extends ViewModel {
     }
 
     public void searchText(String query){
-        if (texts.getValue() == null) {
-            texts.setValue(dbHandler.findText(query));
-        }else{
-            texts.getValue().addAll(dbHandler.findText(query));
-        }
+        texts.setValue(dbHandler.findText(query));
     }
 
     public void getAllTexts(){
-        if (texts.getValue() == null) {
-            texts.setValue(dbHandler.getTexts());
-        }else{
-            texts.getValue().addAll(dbHandler.getTexts());
-        }
+        texts.setValue(dbHandler.getTexts());
     }
 
     public void deleteText(String text){
         dbHandler.deleteText(text);
-        if (texts.getValue() == null) {
-            texts.setValue(dbHandler.getTexts());
-        }else{
-            texts.getValue().addAll(dbHandler.getTexts());
-        }
+        texts.setValue(dbHandler.getTexts());
     }
 }

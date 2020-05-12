@@ -107,11 +107,7 @@ public class ScanActivity extends AppCompatActivity {
             }
         };
 
-        try {
-            mScanViewModel.getTextScanned().observe(this, textScannerObserver);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        mScanViewModel.getTextScanned().observe(this, textScannerObserver);
     }
 
     private void setFlashModeStatus(){

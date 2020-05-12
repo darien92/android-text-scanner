@@ -3,7 +3,6 @@ package com.darien.textreader.views;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,13 +10,16 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.darien.textreader.R;
 import com.darien.textreader.adapters.SearchTextAdapter;
+import com.darien.textreader.models.TextSaved;
 import com.darien.textreader.viewmodels.SavedTextsViewModel;
 
+import java.util.ArrayList;
 
 public class SavedTextsActivity extends AppCompatActivity {
     private SearchView searchView;
@@ -37,11 +39,12 @@ public class SavedTextsActivity extends AppCompatActivity {
         numbersRecyclerView = findViewById(R.id.phone_results_recycler_view);
         tvNoNumbers = findViewById(R.id.no_number_text_view);
         savedTextsViewModel = new SavedTextsViewModel(this);
-        savedTextsViewModel.getTexts().observe(this, textSaveds -> {
-            showTVNoNumbers(textSaveds.size());
-            adapter.setTexts(textSaveds);
+        final Observer<ArrayList<TextSaved>> textSavedObserver = (results) ->{
+            showTVNoNumbers(results.size());
+            adapter.setTexts(results);
             adapter.notifyDataSetChanged();
-        });
+        };
+        savedTextsViewModel.getTexts().observe(this, textSavedObserver);
         //inicializando los elementos de la lista
         adapter = new SearchTextAdapter(this, new SearchTextAdapter.TextsListListener() {
             @Override
@@ -72,7 +75,6 @@ public class SavedTextsActivity extends AppCompatActivity {
         MenuItem menuItem = menu.findItem(R.id.action_search);
         searchView = (SearchView) menuItem.getActionView();
         searchView.setQueryHint("Search...");
-        searchView.setInputType(InputType.TYPE_CLASS_NUMBER);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {

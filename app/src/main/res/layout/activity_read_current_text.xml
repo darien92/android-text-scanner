@@ -27,20 +27,29 @@
         app:layout_constraintTop_toTopOf="@+id/image_go_back_read_current_text"
         app:layout_constraintVertical_bias="0.375" />
 
-    <TextView
-        android:id="@+id/tv_current_text"
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Lorem ipsum"
-        android:textSize="16sp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/btn_save_curr_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_go_back_read_current_text" />
+        app:layout_constraintTop_toBottomOf="@+id/image_go_back_read_current_text" >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:id="@+id/tv_current_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum"
+                android:textSize="16sp" />
+        </ScrollView>
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_save_curr_text"

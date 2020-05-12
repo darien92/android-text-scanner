@@ -97,7 +97,6 @@
                 android:src="@drawable/ic_navigate_next_red_24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
-
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
@@ -105,7 +104,6 @@
                 android:src="@drawable/ic_navigate_next_red_24dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
-
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
@@ -113,11 +111,10 @@
                 android:src="@drawable/ic_navigate_next_red_24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:rotation="220"
+                android:rotation="225"
                 android:src="@drawable/ic_navigate_next_red_24dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
